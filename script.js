@@ -64,6 +64,8 @@ const createTaskPanel = function(){
   var running = 0;
   var resetTimer = false;
 
+  var li = document.createElement("li");
+
   //add timer
   var timerSpan = document.createElement("span");
   timerSpan.setAttribute("id", "stopWatchDisplay");
@@ -84,6 +86,10 @@ var pauseBtn = document.createElement("button");
 pauseBtn.innerHTML = "<span><i class='fa fa-pause-circle'></i></span>";
 pauseBtn.setAttribute("id", "pauseBtn");
 
+//add stop button
+var stopBtn = document.createElement("button");
+stopBtn.innerHTML = "<span><i class='fa fa-check-circle'></i></span>";
+stopBtn.setAttribute("id", "stopBtn");
 li.appendChild(stopBtn);
   stopBtn.addEventListener("click", stopTimer);
 
