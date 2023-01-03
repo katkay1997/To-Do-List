@@ -2,23 +2,22 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="spreadsheet" href="css/style.css"></link>
+<link rel="stylesheet" href="css/style.css"></link>
 </head>
-
 
 <body>
     <div id="myDIV" class="header">
-        <h2 style="margin:5px">My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="newElement()" class="addBtn">Add</span>
+        <h2 style="margin:5px">Goals</h2>
+        <input type="text" id="myInput" placeholder="What's next on your list?">
+        <span onclick="newElement()" class="addBtn addTaskBtn">Add</span>
       </div>
       
       <ul id="myUL">
-        <li class="checked">Shop at Supermarket</li>
-        <li>Meet George</li>
-        <li>Read a book</li>
+        <li class="checked timerDisplay">Shop at Trader Joe's</li>
+        <li>Do laundry</li>
+        <li>Read Atomic Habits</li>
         <li>Organize office</li>
       </ul>
       
-      <script src="index.js"></script>
+      <script src="script.js"></script>
 </body>
