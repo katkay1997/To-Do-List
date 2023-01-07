@@ -97,10 +97,14 @@ stopBtn.setAttribute("id", "stopBtn");
 li.appendChild(stopBtn);
   stopBtn.addEventListener("click", stopTimer);
 
+  // vv Where does the event .addEventListener("click", function,
+
   function pauseTimer() { // why is pauseTimer important? Find this value within your code
-    li.classList.add("paused");
-    li.classList.remove("started");
-    li.classList.remove("done");
+      // li.addEventListener(click, function)
+      li.addEventListener("paused", ()=> add());
+      li.addEventListener ("started", ()=> remove());
+      li.addEventListener("done", ()=> remove());
+   
     running = 0;
     startBtn.enabled = true;
     pauseBtn.enabled = false;
@@ -122,16 +126,21 @@ li.appendChild(stopBtn);
       pauseBtn.enabled = true;
       stopBtn.enabled = true;
     }
-    li.classList.add("started");
-    li.classList.remove("paused");
-    li.classList.remove("done");
+   
+    li.addEventListener("started", ()=> add());
+    li.addEventListener("paused", ()=> remove());
+    li.addEventListener("done", ()=> remove());
     // console.log("start exit:" + resetTimer);
   }
 
   function stopTimer() {
-    li.classList.add("done"); // all of these are event listerners event.addEventListener("click", function, useCapture)
-    li.classList.remove("paused");
-    li.classList.remove("started");
+   
+    li.addEventListener("done ", ()=> add());
+    li.addEventListener("paused", ()=>remove());
+    li.addEventListener("started", ()=> remove());
+
+    //li.addEventListener(" ", ()=> )
+
     running = 0;
     startBtn.enabled = true;
     pauseBtn.enabled = false;
