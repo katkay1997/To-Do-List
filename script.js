@@ -54,6 +54,10 @@ function newElement() {
   }
 }
 
+
+
+
+
 // Adding a timer to each list item 
 var enterButton = document.getElementById("addTaskBtn"); // not sure if this code is needed
 var input = document.getElementById("myInput");
@@ -111,7 +115,7 @@ li.appendChild(stopBtn);
     if (resetTimer) {
       reset();
     }    
-    if (running == 0) {
+    if (running == 0) { // add an event listener here
       running = 1;
       increment(timerSpan);
       startBtn.enabled = false;
@@ -125,7 +129,7 @@ li.appendChild(stopBtn);
   }
 
   function stopTimer() {
-    li.classList.add("done");
+    li.classList.add("done"); // all of these are event listerners event.addEventListener("click", function, useCapture)
     li.classList.remove("paused");
     li.classList.remove("started");
     running = 0;
