@@ -75,7 +75,7 @@ const createTaskPanel = function(){
 
 //add start button
 var startBtn = document.createElement("button");
-startBtn.innerHTML = "<span><i class='fa fa-play-circle'></i></span>";
+//startBtn.innerHTML = "<span><i class='fa fa-play-circle'></i></span>";
 startBtn.setAttribute("id", "startBtn");
 li.appendChild(startBtn);
 startBtn.addEventListener("click", startTimer);
@@ -167,3 +167,4 @@ li.appendChild(stopBtn);
 
   createTaskPanel();
 
+git
