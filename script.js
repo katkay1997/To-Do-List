@@ -76,18 +76,18 @@ const createTaskPanel = function(){
 
 //add start button
 const startBtn = document.createElement("button");
-startBtn.innerHTML = "<button>\u23F5 </button>";
+startBtn.innerHTML = "<button>\u23f5 </button>";
 startBtn.addEventListener('click', startTimer);
 
 //add pause button
 const pauseBtn = document.createElement("button");
 //delBtn.appendChild(document.createTextNode("X"));
-pauseBtn.innerHTML = "<button>\u23F8</button>";
+pauseBtn.innerHTML = "<button>\u00D7</button>";
 pauseBtn.setAttribute("id", "pauseBtn");
 
 //add stop button
 const stopBtn = document.createElement("button");
-stopBtn.innerHTML = "<button>\u23F9 </button>";
+stopBtn.innerHTML = "<button>\u23F8 </button>";
 li.appendChild(stopBtn);
 stopBtn.addEventListener('click', stopTimer);
 
