@@ -97,8 +97,7 @@ stopBtn.addEventListener('click', stopTimer);
       // li.addEventListener(click, function)
       li.addEventListener('click', pauseBtn);
   
-   
-    running = 0;
+
     startBtn.enabled = true;
     pauseBtn.enabled = false;
     stopBtn.enabled = true;
