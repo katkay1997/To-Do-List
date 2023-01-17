@@ -59,51 +59,44 @@ function newElement() {
 
 
 // Adding a timer to each list item 
-var enterButton = document.getElementById("addTaskBtn"); // not sure if this code is needed
-var input = document.getElementById("myInput");
-var ul = document.querySelector("ul");
+const enterButton = document.querySelector("addTaskBtn");
+const input = document.querySelector("myInput");
+const ul = document.querySelector("#myUL");
+const li = document.createElement("li");
 
 const createTaskPanel = function(){
-  var time = 0;
-  var running = 0;
-  var resetTimer = false;
-
-  var li = document.createElement("li");
+  const time = 0;
+  const running = 0;
+  const resetTimer = false;
 
   //add timer
-  var timerSpan = document.createElement("span");
-  timerSpan.setAttribute("id", "stopWatchDisplay");
-  timerSpan.classList.add("timerDisplay");
-  timerSpan.innerHTML = "00:00:00";
-  li.appendChild(timerSpan); // there's an error on the browser. Figure out why
+  const timerButton = document.createElement("button");
+  timerButton.innerHTML = "00:00:00";
+  li.appendChild(timerButton); // there's an error on the browser. Figure out why
 
 //add start button
-var startBtn = document.createElement("button");
-startBtn.innerHTML = "<span><i class='fa fa-play-circle'></i></span>";
-startBtn.setAttribute("id", "startBtn");
-li.appendChild(startBtn);
-startBtn.addEventListener("click", startTimer);
+const startBtn = document.createElement("button");
+startBtn.innerHTML = "<button>\u23F5 </button>";
+startBtn.addEventListener('click', startTimer);
 
 //add pause button
-var pauseBtn = document.createElement("button");
+const pauseBtn = document.createElement("button");
 //delBtn.appendChild(document.createTextNode("X"));
-pauseBtn.innerHTML = "<span><i class='fa fa-pause-circle'></i></span>";
+pauseBtn.innerHTML = "<button>\u23F8</button>";
 pauseBtn.setAttribute("id", "pauseBtn");
 
 //add stop button
-var stopBtn = document.createElement("button");
-stopBtn.innerHTML = "<span><i class='fa fa-check-circle'></i></span>";
-stopBtn.setAttribute("id", "stopBtn");
+const stopBtn = document.createElement("button");
+stopBtn.innerHTML = "<button>\u23F9 </button>";
 li.appendChild(stopBtn);
-  stopBtn.addEventListener("click", stopTimer);
+stopBtn.addEventListener('click', stopTimer);
 
   // vv Where does the event .addEventListener("click", function,
 
   function pauseTimer() { // why is pauseTimer important? Find this value within your code
       // li.addEventListener(click, function)
-      li.addEventListener("paused", ()=> add());
-      li.addEventListener ("started", ()=> remove());
-      li.addEventListener("done", ()=> remove());
+      li.addEventListener('click', pauseBtn);
+  
    
     running = 0;
     startBtn.enabled = true;
@@ -111,6 +104,7 @@ li.appendChild(stopBtn);
     stopBtn.enabled = true;
     // console.log("pause:" + resetTimer);
   }
+  pauseTimer();
 
   function startTimer() {
     //console.log("start enter:" + resetTimer);
@@ -127,20 +121,15 @@ li.appendChild(stopBtn);
       stopBtn.enabled = true;
     }
    
-    li.addEventListener("started", ()=> add());
-    li.addEventListener("paused", ()=> remove());
-    li.addEventListener("done", ()=> remove());
+    li.addEventListener('click', startBtn);
+  
     // console.log("start exit:" + resetTimer);
   }
 
   function stopTimer() {
    
-    li.addEventListener("done ", ()=> add());
-    li.addEventListener("paused", ()=>remove());
-    li.addEventListener("started", ()=> remove());
-
-    //li.addEventListener(" ", ()=> )
-
+    li.addEventListener('click', stopBtn);
+  
     running = 0;
     startBtn.enabled = true;
     pauseBtn.enabled = false;
@@ -170,7 +159,7 @@ li.appendChild(stopBtn);
           secs = "0" + secs;
         }
 
-        timerSpan.innerHTML = mins + ":" + secs + ":" + "0" + tenths;
+        timerButton.innerHTML = mins + ":" + secs + ":" + "0" + tenths;
         increment();
       }, 100);
     }
