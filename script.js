@@ -83,11 +83,11 @@ startBtn.addEventListener('click', startTimer);
 const pauseBtn = document.createElement("button");
 //delBtn.appendChild(document.createTextNode("X"));
 pauseBtn.innerHTML = "<button>\u00D7</button>";
-pauseBtn.setAttribute("id", "pauseBtn");
+pauseBtn.addEventListener('click', pauseTimer);
 
 //add stop button
 const stopBtn = document.createElement("button");
-stopBtn.innerHTML = "<button>\u23F8 </button>";
+stopBtn.innerHTML = "<button>\u23F8  </button>";
 li.appendChild(stopBtn);
 stopBtn.addEventListener('click', stopTimer);
 
@@ -97,7 +97,6 @@ stopBtn.addEventListener('click', stopTimer);
       // li.addEventListener(click, function)
       li.addEventListener('click', pauseBtn);
   
-
     startBtn.enabled = true;
     pauseBtn.enabled = false;
     stopBtn.enabled = true;
