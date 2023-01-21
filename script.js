@@ -77,8 +77,7 @@ const createTaskPanel = function(){
   //add timer
   timerButton.style.backgroundColor = "black";
   timerButton.innerHTML = "00:00:00";
-  li.appendChild(timerButton); // there's an error on the browser. Figure out why
- 
+  li.appendChild(timerButton); 
 
 //add start button
 startBtn.style.backgroundColor = "blue";
@@ -98,23 +97,21 @@ stopBtn.innerHTML = "<button>\u23F8  </button>";
 li.appendChild(stopBtn);
 stopBtn.addEventListener('click', stopTimer);
 
-  // vv Where does the event .addEventListener("click", function,
-
-  function pauseTimer() { // why is pauseTimer important? Find this value within your code
-      // li.addEventListener(click, function)
+ 
+  function pauseTimer() {
       li.addEventListener('click', pauseBtn);
+
   
     startBtn.enabled = true;
     pauseBtn.enabled = false;
     stopBtn.enabled = true;
-    // console.log("pause:" + resetTimer);
+  
   }
   pauseTimer();
 
   function startTimer() {
-    //console.log("start enter:" + resetTimer);
-    //The classList property is not supported in Internet Explorer 9 and earlier versions.
-    //li.classList.toggle("started");
+    
+   
     if (resetTimer) {
       reset();
     }    
@@ -128,7 +125,6 @@ stopBtn.addEventListener('click', stopTimer);
    
     li.addEventListener('click', startBtn);
   
-    // console.log("start exit:" + resetTimer);
   }
 
   function stopTimer() {
@@ -140,7 +136,7 @@ stopBtn.addEventListener('click', stopTimer);
     pauseBtn.enabled = false;
     stopBtn.enabled = false;
     resetTimer = true;
-    // console.log("stop:" + resetTimer);
+    
   }
   function reset() {
     running = 0;
