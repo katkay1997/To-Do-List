@@ -64,29 +64,36 @@ const input = document.querySelector("myInput");
 const ul = document.querySelector("#myUL");
 const li = document.createElement("li");
 
+const timerButton = document.createElement("button");
+const startBtn = document.createElement("button");
+const pauseBtn = document.createElement("button");
+const stopBtn = document.createElement("button");
+
 const createTaskPanel = function(){
   const time = 0;
   const running = 0;
   const resetTimer = false;
 
   //add timer
-  const timerButton = document.createElement("button");
+  timerButton.style.backgroundColor = "black";
   timerButton.innerHTML = "00:00:00";
   li.appendChild(timerButton); // there's an error on the browser. Figure out why
+ 
 
 //add start button
-const startBtn = document.createElement("button");
+startBtn.style.backgroundColor = "blue";
 startBtn.innerHTML = "<button>\u23f5 </button>";
 startBtn.addEventListener('click', startTimer);
 
 //add pause button
-const pauseBtn = document.createElement("button");
+
 //delBtn.appendChild(document.createTextNode("X"));
+pauseBtn.style.backgroundColor = "yellow";
 pauseBtn.innerHTML = "<button>\u00D7</button>";
 pauseBtn.addEventListener('click', pauseTimer);
 
 //add stop button
-const stopBtn = document.createElement("button");
+stopBtn.style.backgroundColor = "green";
 stopBtn.innerHTML = "<button>\u23F8  </button>";
 li.appendChild(stopBtn);
 stopBtn.addEventListener('click', stopTimer);
@@ -126,8 +133,8 @@ stopBtn.addEventListener('click', stopTimer);
 
   function stopTimer() {
    
-    li.addEventListener('click', stopBtn);
-  
+  li.addEventListener('click', stopBtn);
+
     running = 0;
     startBtn.enabled = true;
     pauseBtn.enabled = false;
@@ -166,4 +173,6 @@ stopBtn.addEventListener('click', stopTimer);
   };
 
   createTaskPanel();
+
+  
 
