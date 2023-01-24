@@ -1,26 +1,26 @@
 // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
+const myNodelist = document.getElementsByTagName("LI");
+ i;
 for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  const span = document.createElement("SPAN");
+  const txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
 
 // Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
+const close = document.getElementsByClassName("close");
+ i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
-    var div = this.parentElement;
+    const div = this.parentElement;
     div.style.display = "none";
   }
 }
 
 // Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
+const list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
@@ -29,9 +29,9 @@ list.addEventListener('click', function(ev) {
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
+  const li = document.createElement("li");
+  const inputValue = document.getElementById("myInput").value;
+  const t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
     alert("Any future plans?");
@@ -40,15 +40,15 @@ function newElement() {
   }
   document.getElementById("myInput").value = "";
 
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  const span = document.createElement("SPAN");
+  const txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
-      var div = this.parentElement;
+      const div = this.parentElement;
       div.style.display = "none";
     }
   }
@@ -76,7 +76,7 @@ const createTaskPanel = function(){
 
   //add timer
   timerButton.style.backgroundColor = "black";
-  timerButton.innerHTML = "00:00:00";
+  timerButton.innerHTML = "00:00:00"; // Actually, this should be a display not a button. This display moves as time progresses
   li.appendChild(timerButton); 
 
 //add start button
@@ -149,9 +149,9 @@ stopBtn.addEventListener('click', stopTimer);
     if (running == 1) {
       setTimeout(function() {
         time++;
-        var mins = Math.floor(time / 10 / 60) % 60;
-        var secs = Math.floor(time / 10) % 60;
-        var tenths = time % 10;
+        const mins = Math.floor(time / 10 / 60) % 60;
+        const secs = Math.floor(time / 10) % 60;
+        const tenths = time % 10;
 
         if (mins < 10) {
           mins = "0" + mins;
