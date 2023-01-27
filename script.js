@@ -7,4 +7,4 @@ button.addEventListener('click', addingListItems);
 const addingListItems = function() {
 
 
-}
+};
