@@ -9,5 +9,12 @@ const addingListItems = function() {
  element.class = "list-item"
  element.textContent = input.value;
 
+ const deleteBtn = document.createElement("button");
+ deleteBtn.id = 'deleteBtn';
+ deleteBtn.textContent = "\u2573"; 
+
+ const pauseBtn = document.createElement("button")
+ pauseBtn.id = 'pauseBtn'
+ pauseBtn.textContent = "\u23F8";
 };
 
