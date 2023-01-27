@@ -16,5 +16,13 @@ const addingListItems = function() {
  const pauseBtn = document.createElement("button")
  pauseBtn.id = 'pauseBtn'
  pauseBtn.textContent = "\u23F8";
+
+ element.appendChild(deleteBtn);
+ element.appendChild(pauseBtn);
+ element.appendChild(pauseBtn);
+
+listItem.appendChild(element);
+enableEventListeners(element);
+clearInput();
 };
 
