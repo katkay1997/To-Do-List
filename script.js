@@ -26,3 +26,6 @@ enableEventListeners(element);
 clearInput();
 };
 
+function deleteElement(e){
+    e.target.parentElement.remove();
+}
