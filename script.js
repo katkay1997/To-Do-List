@@ -29,3 +29,9 @@ clearInput();
 function deleteElement(e){
     e.target.parentElement.remove();
 }
+
+function startTimer(e){
+const element = e.target.parentElement;
+const timerDisplay = createElement('span', {class:'timerDisplay', id: 'stopWatchDisplay'});
+element.appendChild(timerDisplay);
+};
